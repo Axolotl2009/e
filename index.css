@@ -1,0 +1,557 @@
+
+.containerr {
+  width: 100%;
+  height: 500px; /* Adjust the height as needed */
+  background-image: url('images/image.gif'); /* Specify the path to your GIF image */
+  background-size: cover;
+  background-position: center;
+  color: white; /* Set text color to contrast with the background */
+  text-align: center;
+  padding-top: 100px; /* Adjust spacing if necessary */
+  background-repeat: no-repeat;
+  
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0; /* Adjust background color as needed */
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo img {
+  max-width: 100%; /* Ensure the logo does not overflow its container */
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px; /* Adjust spacing between links as needed */
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-size: 18px; /* Adjust font size as needed */
+}
+
+.custom-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.containerr {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px; /* Adjust as needed */
+}
+
+.container h1 {
+  text-align: center;
+}
+.chart-container {
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+
+.chart {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+  background-color: #eee;
+  border-radius: 50%;
+  position: relative;
+}
+
+.slice {
+  width: 100%;
+  height: 100%;
+  clip: rect(0, 100px, 200px, 0);
+  border-radius: 50%;
+  position: absolute;
+}
+
+.bar {
+  width: 100%;
+  height: 100%;
+  background-color: #3498db;
+  border-radius: 50%;
+}
+
+.fill {
+  width: 100%;
+  height: 100%;
+  background-color: #2ecc71;
+  border-radius: 50%;
+  clip: rect(0, 100px, 200px, 0);
+  position: absolute;
+}
+
+.percentage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  color: #333;
+}
+@property --progress-value {
+  syntax: '<integer>';
+  inherits: false;
+  initial-value: 0;
+}
+
+@keyframes html-progress {
+  to { --progress-value: 92; }
+}
+
+@keyframes css-progress {
+  to { --progress-value: 87; }
+}
+
+@keyframes js-progress {
+  to { --progress-value: 73; }
+}
+
+.progress-bar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  
+  /* to center the percentage value */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-bar::before {
+  counter-reset: percentage var(--progress-value);
+  content: counter(percentage) '%';
+}
+
+.html {
+  background: 
+    radial-gradient(closest-side, white 79%, transparent 80% 100%),
+    conic-gradient(hotpink calc(var(--progress-value) * 1%), pink 0);
+  animation: html-progress 2s 1 forwards;
+}
+
+.html::before {
+  animation: html-progress 2s 1 forwards;
+}
+
+.css {
+  background: 
+    radial-gradient(closest-side, white 79%, transparent 80% 100%, white 0),
+    conic-gradient(hotpink calc(var(--progress-value) * 1%), pink 0);
+  animation: css-progress 2s 1 forwards;
+}
+
+.css::before {
+  animation: css-progress 2s 1 forwards;
+}
+
+.js {
+  background: 
+    radial-gradient(closest-side, white 79%, transparent 80% 100%, white 0),
+    conic-gradient(hotpink calc(var(--progress-value) * 1%), pink 0);
+  animation: js-progress 2s 1 forwards;
+}
+
+.js::before {
+  animation: js-progress 2s 1 forwards;
+}
+
+body {
+  font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif;
+  margin: 30px auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 600px;
+}
+
+h2 {
+  text-align: center;
+}
+
+progress {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+.progress-bar-container {
+  display: flex; /* Use flexbox to arrange the containers horizontally */
+  align-items: center; /* Align items vertically within the container */
+  margin-bottom: 20px; /* Add margin bottom for spacing between containers */
+}
+
+.progress-bar-container h2 {
+  margin-right: 10px; /* Add some spacing between the label and the progress bar */
+}
+
+.progress-bar {
+  width: 100px; /* Set a fixed width for the progress bar containers */
+  height: 20px; /* Set the height as needed */
+  background-color: #f0f0f0; /* Background color of the progress bar container */
+  border-radius: 5px; /* Rounded corners for the progress bar */
+}
+
+.progress-bar progress {
+  width: 100%; /* Make the progress element fill the entire width */
+  height: 100%; /* Ensure the height of the progress element matches the container */
+}
+@property --p{
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0;
+}
+
+.pie {
+  --p:20;
+  --b:22px;
+  --c:darkred;
+  --w:150px;
+  
+  width:var(--w);
+  aspect-ratio:1;
+  position:relative;
+  display:inline-grid;
+  margin:5px;
+  place-content:center;
+  font-size:25px;
+  font-weight:bold;
+  font-family:sans-serif;
+}
+.pie:before,
+.pie:after {
+  content:"";
+  position:absolute;
+  border-radius:50%;
+}
+.pie:before {
+  inset:0;
+  background:
+    radial-gradient(farthest-side,var(--c) 98%,#0000) top/var(--b) var(--b) no-repeat,
+    conic-gradient(var(--c) calc(var(--p)*1%),#0000 0);
+  -webkit-mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+          mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+}
+.pie:after {
+  inset:calc(50% - var(--b)/2);
+  background:var(--c);
+  transform:rotate(calc(var(--p)*3.6deg)) translateY(calc(50% - var(--w)/2));
+}
+.animate {
+  animation:p 1s .5s both;
+}
+.no-round:before {
+  background-size:0 0,auto;
+}
+.no-round:after {
+  content:none;
+}
+@keyframes p {
+  from{--p:0}
+}
+
+body {
+  background:#000000;
+}
+.btn-section {
+  background-color: #007bff; /* Default color */
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  outline: none; /* Remove default focus outline */
+}
+
+.btn-section:focus,
+.btn-section:active {
+  background-color: #28a745; /* Color when clicked */
+}
+.btn-group {
+  font-size: 0; /* Remove default font size */
+}
+
+.btn-section {
+  background-color: #007bff; /* Default color */
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  outline: none; /* Remove default focus outline */
+  display: inline-block; /* Display buttons inline */
+  margin: 0; /* Remove default margin */
+}
+
+.btn-section:focus,
+.btn-section:active {
+  background-color: #28a745; /* Color when clicked */
+}
+.btn-section {
+  background-color: #007bff; /* Default color */
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  outline: none; /* Remove default focus outline */
+  display: inline-block; /* Display buttons inline */
+  margin: 0; /* Remove default margin */
+}
+
+.btn-section:first-child,
+.btn-section:nth-child(2) {
+  border-radius: 0; /* Remove border-radius for the first and second buttons */
+}
+
+.btn-section:focus,
+.btn-section:active {
+  background-color: #28a745; /* Color when clicked */
+}
+.btn-section {
+  background-color: #007bff; /* Default color */
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  outline: none; /* Remove default focus outline */
+  display: inline-block; /* Display buttons inline */
+  margin: 0; /* Remove default margin */
+}
+
+.btn-section:first-child,
+.btn-section:nth-child(3) {
+  border-radius: 25px 0 0 25px; /* Rounded corners on the left side for the first button and right side for the third button */
+}
+
+.btn-section:focus,
+.btn-section:active {
+  background-color: #28a745; /* Color when clicked */
+}
+.btn-section {
+  background-color: #007bff; /* Default color */
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  outline: none; /* Remove default focus outline */
+  display: inline-block; /* Display buttons inline */
+  margin: 0; /* Remove default margin */
+}
+
+.btn-section:first-child,
+.btn-section:nth-child(3) {
+  border-radius: 25px 0 0 25px; /* Rounded corners on the left side for the first button and the right side for the third button */
+}
+
+.btn-section:nth-child(3) {
+  border-radius: 0 25px 25px 0; /* Rounded corners on the right side for the third button and the left side for the first button */
+}
+
+.btn-section:focus,
+.btn-section:active {
+  background-color: #28a745; /* Color when clicked */
+}
+.btn-section:nth-child(2) {
+  background-color: #6c757d; /* Gray color for the second button */
+}
+
+.btn-section:focus,
+.btn-section:active {
+  background-color: #343a40; /* Darker color when clicked */
+}
+.btn-section {
+  color: white;
+  padding: 10px 20px; /* Increase padding for bigger buttons */
+  border: none;
+  cursor: pointer;
+  outline: none;
+  display: inline-block;
+  margin: 0;
+  font-size: 16px; /* Increase font size for bigger buttons */
+}
+
+.btn-section:first-child,
+.btn-section:nth-child(3) {
+  border-radius: 25px 0 0 25px;
+  background: linear-gradient(90deg, #007bff, #28a745); /* Gradient background for the first and third buttons */
+}
+
+.btn-section:nth-child(2) {
+  background-color: #6c757d; /* Gray color for the second button */
+}
+
+.btn-section:focus,
+.btn-section:active {
+  background-color: #343a40; /* Darker color when clicked */
+}
+.btn-section:first-child,
+.btn-section:nth-child(3) {
+  border-radius: 25px 0 0 25px; /* Rounded corners on the left side for the first button and the right side for the third button */
+}
+
+.btn-section:nth-child(3) {
+  border-radius: 0 25px 25px 0; /* Rounded corners on the right side for the third button and the left side for the first button */
+}
+.btn-section {
+  color: white;
+  padding: 10px 20px; /* Increase padding for bigger buttons */
+  border: none;
+  cursor: pointer;
+  outline: none;
+  display: inline-block;
+  margin: 0;
+  font-size: 25px; /* Increase font size for bigger buttons */
+}
+
+.btn-section:first-child,
+.btn-section:nth-child(3) {
+  border-radius: 25px 0 0 25px;
+  background: linear-gradient(90deg, #007bff, #28a745); /* Gradient background for the first and third buttons */
+}
+
+.btn-section:nth-child(2) {
+  border-radius: 0; /* Remove border radius for the middle button */
+  background-color: #dc3545; /* Red color for the middle button */
+}
+
+.btn-section:focus,
+.btn-section:active {
+  background-color: #6c757d; /* Darker color when clicked */
+}
+.btn-section:first-child,
+.btn-section:nth-child(3) {
+  border-radius: 25px 0 0 25px; /* Rounded corners on the left side for the first button and the right side for the third button */
+}
+
+.btn-section:nth-child(3) {
+  border-radius: 0 25px 25px 0; /* Rounded corners on the right side for the third button and the left side for the first button */
+}
+.button-container {
+  text-align: center;
+}
+
+.btn-section {
+
+  background: linear-gradient(90deg, #007bff, #28a745);
+}
+
+.icon-container {
+  margin-top: 10px; /* Add margin between buttons and images */
+}
+
+.icon-container img {
+  width: 50px; /* Adjust width of images */
+  height: 50px; /* Adjust height of images */
+  margin: 0 10px; /* Add margin between images */
+}
+.icon-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px; /* Add margin between buttons and images */
+  width: 100%; /* Ensure the container spans the full width */
+}
+
+.icon-container img {
+  width: 300px; /* Adjust width of images */
+  height: 300px; /* Adjust height of images */
+}
+.button-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.container {
+  background-color: #f0f0f000; /* Background color around the email form */
+  padding: 20px;
+  background-image: url('images/image.gif');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  width: 100%;
+  background-color: transparent; /* Make the background transparent */
+}
+
+.email-form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 400px; /* Adjust width as needed */
+  background-color: transparent; /* Make the background transparent */
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: transparent; /* Make the background transparent */
+}
+textarea :hover{
+  background-color: white;
+}
+
+textarea {
+  height: 120px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
